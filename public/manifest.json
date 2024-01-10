@@ -1,0 +1,33 @@
+{
+    "name": "4uprint Company application",
+    "short_name": "4uprint",
+    "start_url": "/index.php",
+    "background_color": "#0066CC",
+    "description": "4uprint Package",
+    "display": "fullscreen",
+    "theme_color": "#348CD2",
+    "icons": [
+        {
+            "src": "logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "maskable_icon_x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "maskable_icon_x128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "density": 2
+        },
+        {
+            "src": "maskable_icon_x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+// importScripts('https://cdn.jsdelivr.net/npm/sw-toolbox@6.0.1/sw-toolbox.min.js');
+// // Define the service worker's scope.
+// this.scope = '/';
+// // Cache all of the application's static assets.
+// const filesTocache=[
+//   '/',
+//   '/index.php',
+//   '/css/style.css',
+//   '/css/app.css',
+//   '/css/templatemo-style.css',
+//   '/css/templatemo-pod-talk.css',
+//   '/css/owl.theme.default.min.css',
+//   '/css/owl.carousel.min.css',
+//   '/css/bootstrap.min.css',
+//   '/css/bootstrap-icons.css',
+//   '/css/all.min.css',
+//   '/js/app.js',
+//   '/js/bootstrap.min.js',
+//   '/js/custom.js',
+//   '/js/owl.carousel.min.js',
+//   '/js/parallax.min.js',
+//   '/js/jquery.min.js',
+//   '/images',
+//   '/imageprintpost',
+//   '/fonts',
+//   "purpose": "any maskable"
+// ];
+// {
+//     "src": "maskable_icon_x192.png",
+//     "sizes": "192x192",
+//     "type": "image/png"
+// },
+// {
+//     "src": "maskable_icon_x128.png",
+//     "sizes": "128x128",
+//     "type": "image/png"
+// },
+// {
+//     "src": "maskable_icon_x96.png",
+//     "sizes": "96x96",
+//     "type": "image/png",
+//     "purpose": "any maskable"
+// }
+// self.addEventListener('install', function(event) {
+//     // This event fires when the service worker is installed.
+//     // We can use this event to do things like cache
+//     // the application's assets so that they can be
+//     // accessed offline.
+//     // In this case, we're going to cache the application's
+//     // main HTML file and all of its JavaScript files.
+//     event.waitUntil(
+//       caches.open('pwa-app').then(function(cache) {
+//         return cache.addAll(filesTocache);
+//       }).then(()=> self.skipWaiting())
+//     );
+//   });
+// // Intercept all network requests and serve them from cache if possible.
+// self.addEventListener('fetch', event => {
+//   event.respondWith(
+//     cache.match(event.request)
+//       .then(response => response)
+//       .catch(() => fetch(event.request))
+//   );
+// });
+// // Listen for push notifications.
+// self.addEventListener('push', event => {
+//   const notification = new Notification('New message', {
+//     body: 'This is a notification.'
+//   });
+//   notification.onclick = () => {
+//     // Do something when the notification is clicked.
+//   };
+// });

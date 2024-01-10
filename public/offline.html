@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="InfyBonus">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="theme-color" content="#348CD2" />
+    <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+    <link rel="apple-touch-icon" href="{{ asset('maskable_icon_x192.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('maskable_icon_x128.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('maskable_icon_x96.png') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+    <link rel="stylesheet" href="{{ url('css/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ url('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url('css/templatemo-style.css') }}" />
+    <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <link href="{{ url('css/templatemo-pod-talk.css') }}" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css' />
+
+    <style>
+        .error_body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            width: 100%;
+            background: #f9f9f9;
+        }
+
+        .error_container .error_heading {
+            color: transparent;
+            font-size: 160px;
+            margin: 0;
+            font-weight: 900;
+            letter-spacing: 20px;
+            background-size: 100% 100%;
+            background: linear-gradient(90deg, #6b719b 38%, #9da3cc 53%, #979dce 65%);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -ms-background-clip: text;
+        }
+
+        @media (max-width: 540px) {
+            .error_container .error_heading {
+                font-size: 120px;
+                letter-spacing: 10px;
+            }
+        }
+
+        .error_container .error_btn {
+            background-color: #6e749e !important;
+            border: none;
+            outline: none;
+        }
+
+        .error_container .error_btn:focus {
+            box-shadow: none !important;
+        }
+
+        .error_container .error_message,
+        .error_container .error_paragraph {
+            color: #787878;
+        }
+    </style>
+</head>
+<body>
+<div class="error_body">
+    <div
+        class="container error_container d-flex justify-content-center align-items-center flex-column w-100 h-100 p-5 text-center">
+        <h2 class="error_message text-center mb-3">Boo! You don't have an internet connection</h2>
+        <p class="error_paragraph text-center mb-5">
+            Please check your network connection and try again.
+        </p>
+        <a href="/" class="btn btn-primary error_btn">Back to Home Page</a>
+    </div>
+</div>
+<script src="/js/app.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/parallax.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/custom.js"></script>
+<script src="{{ asset('/sw.js') }}"></script>
+<script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+</script>
+
+</body>
+</html>
