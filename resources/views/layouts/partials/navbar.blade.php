@@ -1,64 +1,111 @@
 <header>
     <div class="tm-nav" style="display: flex ;justify-content:flex-end;">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <div class="resh"></div>
-                <div class="custom-form search-form flex-fill me-3 " style="margin-right: 15px;">
-                    <div class=" input-group-lg">
-                        {{-- <i  class="bi-search"></i> --}}
-                        <input class="form-control text-center" style="font-family: Tajawal"
-                            placeholder='ابحث في اعمال الشركة' id="search">
-                        <div id='exampled'></div>
-                    </div>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="btnnoneS">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarNav">
-                    <ul class="navbar-nav ms-lg-auto" id="navbarNavreact">
-                        <li class="nav-item">
-                            <a class="nav-link active" style="font-family: 'Tajawal'"   href="{{ route('welcome') }}">الرئيسية</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="font-family: 'Tajawal'"  href="{{ route('about') }}">من نحن</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink"
-                                role="button" data-bs-toggle="dropdown" style="font-family: 'Tajawal'"  aria-expanded="false">الاقسام</a>
-                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                <li><a class="dropdown-item" style="font-family: 'Tajawal'"  href="{{ route('print.index') }}">التصميم والطباعة</a></li>
-                                {{-- <li><a class="dropdown-item" href="#section_2">القسم الفني والدعاية</a></li> --}}
-                                <li><a class="dropdown-item" style="font-family: 'Tajawal'"  href="{{ route('market.index') }}">التسويق الألكتروني</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"  style="font-family: 'Tajawal'"  href="{{ route('contact.create') }}">اتصل بنا</a>
-                        </li>
-                        @auth
-                            {{ auth()->user()->name }}
-                            <a class="nav-link" href="#">{{ Auth::user()->username }}<span
-                                    class="sr-only">(current)</span></a>
-                        @else
-                            <a class="nav-link" style="font-family: 'Tajawal'"  href="#">اسم المستخدم <span class="sr-only">(current)</span></a>
-                        @endauth
-                        @auth
-                            {{ auth()->user()->name }}
-                            <div class="nav-item ">
-                                <a href="{{ route('logout.perform') }}" style="font-family: 'Tajawal'"  class="nav-link">تسجيل الخروج</a>
-                            </div>
-                        @endauth
-                        @guest
-                            <div class="nav-item row">
-                                <a href="{{ route('login.perform') }}" style="font-family: 'Tajawal'"  class="nav-link" href="services.html">دخول</a>
-                                <a href="{{ route('register.perform') }}" style="font-family: 'Tajawal'"   class="nav-link">تسجيل جديد</a>
-                            </div>
-                        @endguest
-                    </ul>
-                    <!-- btn custom-btn custom-border-btn  -->
-                </div>
-            </div>
-        </nav>
+        <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">  
+          <div class="container_nave">   
+
+        <div class="icon_button">
+        <div class="all_container">
+          <button type="submit" class="btn tm-btn-submit button_navber" style="background-color: #2d3291;">دخول / تسجيل </button>
+          <div class="langoug_style">
+            <a href="#infinite" class="navbar-brand">English</a>
+            <a href="#whatwedo" class="text-center tm-down-arrow-link">
+                <img src="images/united-kingdom.png" alt="flags" style="width:50px;margin-top: -15px; border-radius: 15px;">
+            </a>
+        </div> 
+        </div> 
+
+
+          <div class="navber_body"  id="navbarSupportedContent">
+            <ul class="navbar-nav ml-2">
+              
+            
+            <li class="nav-item">
+              <div class="dropdown">
+              <a class="nav-link tm-nav-link" href="#testimonials">كارترست</a>
+              <div class="dropdown-content">
+                  <a href="#">ساعدني اختار سيارة </a>
+                  <a href="#">قيمنا </a>
+                  <a href="#">الاعتمادات</a>
+                  <a href="#">سياسة الحيادية</a>
+                  <a href="#">مواقعنا</a>
+                  <a href="#">الخدمة المتنقلة</a>
+                  <a href="#">الوظائف</a>
+                  <a href="#">تواصل معنا</a>
+              </div>
+              </div>
+              </li>
+            <li class="nav-item">
+              <div class="dropdown">
+              <a class="nav-link tm-nav-link" href="#testimonials">الحلول التقنية</a>
+              <div class="dropdown-content">
+                  <a href="#">منصة الشركاء </a>
+                  <a href="#">منصة العناية بالسيارة </a>
+                  <a href="#">منصة المزاد</a>
+                  <a href="#">فحص اضرار المركبات بالذكاء الاصطناعي</a>
+                  <a href="#">منصة تقييم تكلفة تصليح المركبات الذكية</a>
+                  <a href="#">الفحص الحراري لجسم المركبة</a>
+              </div>
+              </div>
+              </li>
+              <li class="nav-item">
+              <div class="dropdown">
+              <a class="nav-link tm-nav-link" href="#testimonials">البيانات والأفكار</a>
+              <div class="dropdown-content">
+                  <a href="#">ساعدني اختار سيارة </a>
+                  <a href="#">افضل السيارات</a>
+                  <a href="#">مراجعة الخبراء</a>
+                  <a href="#">السيارات الكهربائية</a>
+                  <a href="#">برنامج جوائز كارترست</a>
+                  <a href="#">آخر الاخبار</a>
+              </div>
+              </div>
+              </li>
+              <li class="nav-item">
+              <div class="dropdown">
+              <a class="nav-link tm-nav-link" href="#testimonials">ضمان السيارات</a>
+              <div class="dropdown-content">
+                  <a href="#">اضمن لي سيارتي</a>
+                  <a href="#">برنامج كارترستد</a>
+                  <a href="#">تسوق مع كارترستد</a>
+              </div>
+              </div>
+              </li>
+              <li class="nav-item">
+              <div class="dropdown">
+              <a class="nav-link tm-nav-link" href="#testimonials">فحص السيارات</a>
+              <div class="dropdown-content">
+                  <a href="#">فحص السيارات </a>
+                  <a href="#">انواع فحص السيارات</a>
+                  
+              </div>
+              </div>
+              </li>
+              <li class="nav-item">
+              <div class="dropdown">
+              <a class="nav-link tm-nav-link" href="#testimonials">سعر السيارات المستخدمة</a>
+              <div class="dropdown-content">
+                  <a href="#">سعر سيارتي </a>
+                  <a href="#">سعر السيارات الجديدة</a>
+                  <a href="#">السعر المستقبلي</a>
+              </div>
+              </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#contact">الصفحة الرئيسية</a>
+              </li>                    
+            </ul>
+       
+          </div>  
+          <div class="icon_logo">
+              <!-- <a href="#infinite" class="navbar-brand">Infinite Loop</a> -->
+              <a href="#infinite" class="navbar-brand">
+                <img src="images/logo.png" style="width:150px;margin-top: 35px;box-shadow: 10px seashell;">
+              </a>          
+          </div>    
+          </div>
+    
+        </div>
+    </nav>
+   
     </div>
 </header>

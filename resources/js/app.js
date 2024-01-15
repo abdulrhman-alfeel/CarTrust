@@ -6,4 +6,5 @@
 
 require('./bootstrap')
 require('./components/form')
+require('./components/slider')
 // require('./components/formponst')

@@ -14,17 +14,12 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 Route::get('sendrequest', 'App\Http\Controllers\EditpasordController@getPost');
-Route::resource('print',PrintControlle::class);
-
-Route::resource('market', MarketControlle::class);
-// Route::view('/{path?}', 'app');
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
     /**
      * Home Routes
      */
-    // Route::post('print.store','PrintControlle@store')->name('print.store');
     Route::get('/', 'HomeController@index')->name('welcome');
     Route::get('/about', 'HomeController@about')->name('about');
 
@@ -36,9 +31,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          */
         Route::get('/register', 'RegisterController@show')->name('register.show');
         Route::post('/register', 'RegisterController@register')->name('register.perform');
-        // Route::get('/passwords/reset/{id}', 'Auth\ResetPasswordController@showResetForm')->name('passwords.reset');
-        // Route::post('/passwords/reset', 'Auth\ResetPasswordController@reset')->name('passwords.update');
-  
+       
 /**
          * Login Routes
          */
